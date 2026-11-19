@@ -11,7 +11,7 @@ Future<void> main() async {
   if (CloudConfig.enabled) {
     await Supabase.initialize(
       url: CloudConfig.url,
-      anonKey: CloudConfig.publishableKey,
+      publishableKey: CloudConfig.publishableKey,
     );
   }
 
@@ -23,12 +23,9 @@ class KosFinderDeviceApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'KosFinder - Device Demo',
-        theme: ThemeData(
-          colorSchemeSeed: Colors.teal,
-          useMaterial3: true,
-        ),
-        home: const DeviceDemoPage(),
-      );
+    debugShowCheckedModeBanner: false,
+    title: 'KosFinder - Device Demo',
+    theme: ThemeData(colorSchemeSeed: Colors.teal, useMaterial3: true),
+    home: const DeviceDemoPage(),
+  );
 }
